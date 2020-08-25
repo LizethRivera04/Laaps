@@ -14,5 +14,28 @@ const firebaseConfig = {
   };
 // Initialize Firebase
 const fb = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
 
+const createUser = (email, password) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+}
+const google = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+      .then(data => {
+          console.log(data)
+    })
+    .catch(error => console.log(error))
+}
+
+const facebook = () => {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+      .then(data => {
+          console.log(data)
+    })
+    .catch(error => console.log(error))
+}
+
+export default {createUser, google, facebook};
