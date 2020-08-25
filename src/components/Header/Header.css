@@ -1,0 +1,5 @@
+.MuiToolbar-root {
+    background: #101D49;
+    display: flex;
+    justify-content: space-between;
+}

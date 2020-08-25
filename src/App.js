@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
-import Login from './components/Login/Login';
+import Header from './components/Header/Header';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import RegisterForm from './components/LogForm/RegisterForm';
+import LogInForm from './components/LogForm/LogInForm';
 
 function App() {
   return (
-    <div>
-      <Login/>
-    </div>
+    <Fragment>
+      <Header/>
+      <Router>
+        <div className="app">
+          <Switch>
+            <Route exact path="/">
+              <LogInForm />
+            </Route>
+            <Route path="/register">
+              <RegisterForm />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </Fragment>
   );
 }
 
