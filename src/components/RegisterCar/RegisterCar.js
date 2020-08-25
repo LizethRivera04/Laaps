@@ -1,6 +1,5 @@
 import React from 'react'
 import { TextField, Container, Button, FormControl } from '@material-ui/core';
-import Header from '../Header/Header';
 import ImageCar from '../ImageCar/ImageCar';
 import SelectMarca from '../Selects/SelectMarca';
 import SelectColor from '../Selects/SelectColor';
@@ -8,14 +7,13 @@ import styles from './styles.module.css';
 
 const RegCar = () => {
   return (
-    <Container>
-    
-      
+    <Container>      
       <h3>Ingresa tus datos</h3>
       <h4>1.- Agrega los datos de tu automóvil</h4>
       <div className={styles.photocar}>
-        <ImageCar />
+        Aquí va la foto del carro
       </div>
+        <ImageCar />
       <FormControl direction="column">
         <SelectMarca />
         <SelectColor />
