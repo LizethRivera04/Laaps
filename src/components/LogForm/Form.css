@@ -1,0 +1,14 @@
+.MuiFormControl-root {
+    width: 100%;
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h3, h4 {
+    text-align: center;
+}
+.MuiButton-containedPrimary {
+    margin: 5rem;
+}

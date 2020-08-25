@@ -11,9 +11,11 @@
     "@testing-library/user-event": "^7.2.1",
     "date-fns": "^2.15.0",
     "firebase": "^7.19.0",
+    "firebase-tools": "^8.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-geocode": "^0.2.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {

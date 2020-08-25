@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import './App.css';
+import Header from './components/Header/Header';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import RegisterForm from './components/LogForm/RegisterForm';
+import LogInForm from './components/LogForm/LogInForm';
+import RegCar from './components/RegisterCar/RegisterCar';
 import ServiceRequest from './components/ServiceRequest/ServiceRequest'
 
 function App() {
   return (
-    <ServiceRequest />
-
+    <Fragment>
+      <Header />
+      <Router>
+        <div className="app">
+          <Switch>
+            <Route exact path="/">
+              <LogInForm />
+            </Route>
+            <Route path="/register">
+              <RegisterForm />
+            </Route>
+            <Route path="/regcar">
+              <RegCar />
+            </Route>
+            <Route path="/servicerequest">
+              <ServiceRequest />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </Fragment>
   );
 }
 
