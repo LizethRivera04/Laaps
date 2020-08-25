@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const RegCar = () => {
   return (
     <Container>
-      <Header />
+    
       
       <h3>Ingresa tus datos</h3>
       <h4>1.- Agrega los datos de tu automóvil</h4>
