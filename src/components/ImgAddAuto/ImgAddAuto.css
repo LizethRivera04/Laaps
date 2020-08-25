@@ -1,0 +1,18 @@
+.content-auto{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.container-img-auto{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+      /* grid-template-columns: repeat(2,440px);  */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 120px)); 
+    grid-gap: 10px;
+   /*  grid-template-rows: 90px; */
+}
+
+
+.img-auto{
+    width: 110px;
+}

@@ -4,11 +4,13 @@ import Header from './components/Header/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RegisterForm from './components/LogForm/RegisterForm';
 import LogInForm from './components/LogForm/LogInForm';
+import RegCar from './components/RegisterCar/RegisterCar';
+import ServiceRequest from './components/ServiceRequest/ServiceRequest'
 
 function App() {
   return (
     <Fragment>
-      <Header/>
+      <Header />
       <Router>
         <div className="app">
           <Switch>
@@ -17,6 +19,12 @@ function App() {
             </Route>
             <Route path="/register">
               <RegisterForm />
+            </Route>
+            <Route path="/regcar">
+              <RegCar />
+            </Route>
+            <Route path="/servicerequest">
+              <ServiceRequest />
             </Route>
           </Switch>
         </div>
