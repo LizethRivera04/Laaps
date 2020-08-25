@@ -13,7 +13,7 @@ const RegCar = () => {
       
       <h3>Ingresa tus datos</h3>
       <h4>1.- Agrega los datos de tu automóvil</h4>
-      <div>
+      <div className={styles.photocar}>
         <ImageCar />
       </div>
       <FormControl direction="column">
@@ -22,7 +22,7 @@ const RegCar = () => {
         <TextField id="standard-basic" label="Placa" />
 
         <h4>2.- Agrega tu metodo de pago</h4>
-
+        
         <TextField id="standard-basic" label="Pagar con Paypal" type="select"/> 
         <p className={styles.aviso}>Aviso: Serás redirigido para iniciar sesión en la página de PayPal</p>
 
