@@ -87,11 +87,10 @@ const fileUserStorage = (image) => {
         })
 }
 
-const fileAutoStorage = (image) => {
+const fileAutoStorage = (auto) => {
     let user = firebase.auth().currentUser;
     console.log(user.uid);
-    console.log(image);
-    storage.ref('photoUsers').child(image.name).put(image)
+    storage.ref('photoUsers').child(auto.file.name).put(auto.file)
         .then(snapshot => {
             // console.log(snapshot);
             return snapshot.ref.getDownloadURL()
@@ -99,7 +98,7 @@ const fileAutoStorage = (image) => {
         .then(url => {
             let link = url
             console.log(link);
-            updateFileAuto(link, user.uid)
+            updateFileAuto(link, user.uid, auto.userAutoData)
         })
 }
 
@@ -113,10 +112,17 @@ const updatePhoto = (link, uid) => {
 }
 
 
-const updateFileAuto = (link, uid) => {
+const updateFileAuto = (link, uid, userAutoData) => {
     const docRef = db.collection('users/').doc(uid);
     docRef.update({
-        autos: firebase.firestore.FieldValue.arrayUnion(link)
+        autos: firebase.firestore.FieldValue.arrayUnion({
+            image: link, 
+            marca: userAutoData.marca,
+            color: userAutoData.color,
+            placa: userAutoData.placa,
+            
+            
+        })
     })
         .then(res => console.log('Se ha agregado un auto al usuario con id', uid))
         .catch(err => console.err('Error al agregar un auto al usuario', err))
