@@ -41,13 +41,13 @@ const LogForm = () => {
 
                 <div className="button2">
                     <Button fullWidth onClick={()=> auth.facebook()} >
-                        <p><i class="fab fa-facebook"></i>FACEBOOK</p> 
+                        <p><i className="fab fa-facebook"></i>FACEBOOK</p> 
                     </Button>
                 </div>
 
                 <div className="button2">
                     <Button fullWidth onClick={()=> auth.google()} >
-                        <p><i class="fab fa-google"></i>GOOGLE</p> 
+                        <p><i className="fab fa-google"></i>GOOGLE</p> 
                     </Button>
                 </div>
                 
