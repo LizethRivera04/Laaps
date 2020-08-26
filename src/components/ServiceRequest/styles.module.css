@@ -8,18 +8,38 @@
   text-align: center;
   width: 100px;
   height: 100px;
-  border: 1px solid red;
 }
 
 .location {
   display: flex;
   background-color: #C9CEDF;
-  border: 1px solid red;
 }
 
 .paypal {
   display: flex;
   align-items: center;
   background-color: #C9CEDF;
+}
 
+.button1 {
+  border-radius: 25px;
+  margin-top: 20px;
+  background: #101D49;  
+}
+
+.button1 p {
+  color: #fff;   
+  margin: 5px;
+}
+
+.button2 {
+  border: 2px solid #101D49;
+  border-radius: 25px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.button2 p {
+  color: #101D49;   
+  margin: 2px;
 }

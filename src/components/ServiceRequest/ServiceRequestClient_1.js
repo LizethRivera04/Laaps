@@ -28,9 +28,11 @@ const ServiceRequestClient_1 = () => {
             </Typography>
             <ImgAddAuto></ImgAddAuto>
 
-            <Button variant="outlined" color="primary" fullWidth className={styles.button1}>
-                ¿Hoy usas otro Auto?
-            </Button>
+            <div className="button2">
+                <Button fullWidth className={styles.button1}>
+                    ¿Hoy usas otro Auto?
+                </Button>
+            </div>
 
             <h4>Mí método de pago</h4>
             <div className={styles.paypal}>
@@ -38,9 +40,9 @@ const ServiceRequestClient_1 = () => {
             </div>
 
             <div className="button1">
-            <Button variant="outlined" color="primary" fullWidth >
-                CONFIRMA EL LAVADO
-            </Button>
+                <Button fullWidth >
+                <p>CONFIRMA EL LAVADO</p>
+                </Button>
             </div>
         </div>
     )

@@ -17,13 +17,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SelectMarca = () => {
+const SelectMarca = ({userAutoData, setUserAutoData}) => {
   const classes = useStyles();
   const [marca, setMarca] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
-  const handleChange = (event) => {
-    setMarca(event.target.value);
+  const handleChange = (e) => {
+    setUserAutoData({...userAutoData, marca: e.target.value});
+    setMarca(e.target.value)
   };
 
   const handleClose = () => {
@@ -46,16 +47,17 @@ const SelectMarca = () => {
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
+          
           value={marca}
           onChange={handleChange}
         >
 
-          <MenuItem value={1}>VW-Jetta</MenuItem>
-          <MenuItem value={2}>VW-Passat</MenuItem>
-          <MenuItem value={3}>VW-Golf</MenuItem>
-          <MenuItem value={4}>Ford-Fiesta</MenuItem>
-          <MenuItem value={5}>Ford-Escape</MenuItem>
-          <MenuItem value={6}>Ford-Edge</MenuItem>
+          <MenuItem value="VW-Jetta">VW-Jetta</MenuItem>
+          <MenuItem value="VW-Passat">VW-Passat</MenuItem>
+          <MenuItem value="VW-Golf">VW-Golf</MenuItem>
+          <MenuItem value="Ford-Fiesta">Ford-Fiesta</MenuItem>
+          <MenuItem value="Ford-Escape">Ford-Escape</MenuItem>
+          <MenuItem value="Ford-Edge">Ford-Edge</MenuItem>
         </Select>
       </FormControl>
     </div>
