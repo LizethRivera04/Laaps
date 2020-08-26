@@ -7,7 +7,7 @@ import fileAutoStorage from '../../firebase';
 import 'firebase/firestore'
 import 'firebase/auth';
 import firebase from 'firebase/app';
-
+import styles from './styles.module.css';
 
 const useStyles = makeStyles((theme) => ({
 

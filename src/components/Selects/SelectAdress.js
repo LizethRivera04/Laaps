@@ -9,21 +9,21 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
   button: {
     display: 'block',
-    marginTop: theme.spacing(0),
+    marginTop: theme.spacing(2),
   },
   formControl: {
-    margin: theme.spacing(0),
+    margin: theme.spacing(1),
     minWidth: 250,
   },
 }));
 
-const SelectColor = () => {
+const SelectAdress = () => {
   const classes = useStyles();
-  const [color, setColor] = React.useState('');
+  const [marca, setMarca] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
-    setColor(event.target.value);
+    setMarca(event.target.value);
   };
 
   const handleClose = () => {
@@ -39,28 +39,28 @@ const SelectColor = () => {
       <Button className={classes.button} onClick={handleOpen}>
       </Button>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">Color*</InputLabel>
+        <InputLabel id="demo-controlled-open-select-label">Selecciona una dirección guardada</InputLabel>
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
-          value={color}
+          value={marca}
           onChange={handleChange}
         >
-          <MenuItem value={1}>Blanco</MenuItem>
-          <MenuItem value={2}>Negro</MenuItem>
-          <MenuItem value={3}>Rojo</MenuItem>
-          <MenuItem value={4}>Gris</MenuItem>
-          <MenuItem value={5}>Plata</MenuItem>
-          <MenuItem value={6}>Azul</MenuItem>
-          <MenuItem value={7}>Vino</MenuItem>
-          <MenuItem value={7}>Cafe</MenuItem>
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={1}>Aaaaaaaa</MenuItem>
+          <MenuItem value={2}>Bbbbbbbb</MenuItem>
+          <MenuItem value={3}>Cccccccc</MenuItem>
+          <MenuItem value={4}>Dddddddd</MenuItem>
+          <MenuItem value={5}>Eeeeeeee</MenuItem>
         </Select>
       </FormControl>
     </div>
   );
 }
 
-export default SelectColor;
+export default SelectAdress;
