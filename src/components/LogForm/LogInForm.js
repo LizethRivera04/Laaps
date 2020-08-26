@@ -17,7 +17,7 @@ const LogForm = () => {
         password: ''
     })
 
-    return ( 
+    return (
         <Container>
             <h3>Inicia sesión</h3>
             <h4>¿Todavía sin cuenta? <Link to="/register">Regístrate</Link></h4>
@@ -34,8 +34,8 @@ const LogForm = () => {
                 <Button variant="outlined" color="primary" className="button" onClick={()=> auth.facebook()}>FACEBOOK</Button>
                 <Button variant="outlined" color="primary" className="button" onClick={()=> auth.google()}>GOOGLE</Button>
             </div>
-      </Container>
-     );
+        </Container>
+    );
 }
- 
+
 export default LogForm;

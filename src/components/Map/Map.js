@@ -24,10 +24,10 @@ const libraries = ['places']
 
 
 
-const Map = () => {
-    //state paraa guardar la lat y lng y despues mostrar el marker
+const Map = ({ marker, mark, setMarker, setMark }) => {
+    /* //state paraa guardar la lat y lng y despues mostrar el marker
     const [marker, setMarker] = useState({});
-    const [mark, setMark] = useState(false);
+    const [mark, setMark] = useState(false); */
     const mapRef = React.useRef();
     const onMapLoad = React.useCallback((map) => {
         mapRef.current = map;
@@ -71,6 +71,7 @@ const Map = () => {
                 <Markers
                     marker={marker}
                     mark={mark}
+                    setMarker={setMarker}
                 />
             </GoogleMap>
         </div>

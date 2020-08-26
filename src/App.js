@@ -7,6 +7,7 @@ import LogInForm from './components/LogForm/LogInForm';
 import RegCar from './components/RegisterCar/RegisterCar';
 import ServiceRequest from './components/ServiceRequest/ServiceRequest'
 import ServiceHistory from './components/ServiceHistory/ServiceHistory';
+import Solicited from './components/Solicited/Solicited';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/servicehistory">
               <ServiceHistory />
+            </Route>
+            <Route path="/solicited">
+              <Solicited />
             </Route>
           </Switch>
         </div>
