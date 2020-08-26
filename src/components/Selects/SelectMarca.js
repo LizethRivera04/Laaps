@@ -9,10 +9,10 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
   button: {
     display: 'block',
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(0),
   },
   formControl: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(0),
     minWidth: 250,
   },
 }));
@@ -49,9 +49,7 @@ const SelectMarca = () => {
           value={marca}
           onChange={handleChange}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
+
           <MenuItem value={1}>VW-Jetta</MenuItem>
           <MenuItem value={2}>VW-Passat</MenuItem>
           <MenuItem value={3}>VW-Golf</MenuItem>
