@@ -7,13 +7,14 @@ import Geocode from 'react-geocode'
 
 
 
-const Markers = ({ marker, mark }) => {
+const Markers = ({ marker, mark, setMarker }) => {
     //console.log(mark);
     if (!mark) return null
     Geocode.setApiKey(credentials.mapsKey)
     Geocode.fromLatLng(marker.lat, marker.lng)
         .then(res => {
             console.log(res.results[0].formatted_address);
+            setMarker({ ...marker, address: res.results[0].formatted_address })
         })
 
     return (
