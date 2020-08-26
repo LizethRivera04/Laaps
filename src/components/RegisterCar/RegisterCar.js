@@ -3,7 +3,7 @@ import { TextField, Container, Button, FormControl } from '@material-ui/core';
 import ImageCar from '../ImageCar/ImageCar';
 import SelectMarca from '../Selects/SelectMarca';
 import SelectColor from '../Selects/SelectColor';
-import ImgAddAuto from '../ImgAddAuto/ImgAddAuto'
+import ImgAddCar from './ImgAddCar'
 import styles from './styles.module.css';
 
 const RegCar = () => {
@@ -22,9 +22,11 @@ console.log(userAutoData);
       <h3>Ingresa tus datos</h3>
       <h4>1.- Agrega los datos de tu automóvil</h4>
       <div className={styles.photocar}>
-        <ImgAddAuto></ImgAddAuto>
+        <ImgAddCar></ImgAddCar>
       </div>
+      <div className={styles.imgcar}>
         <ImageCar />
+      </div>
       <FormControl direction="column">
         <SelectMarca />
         <SelectColor />
@@ -36,7 +38,9 @@ console.log(userAutoData);
         </div>
         <p className={styles.aviso}>Aviso: Serás redirigido para iniciar sesión en la página de PayPal</p>
 
-        <Button variant="contained" color="primary">SOLICITA UN LAVADO AHORA</Button>
+        <div className={styles.button1}>
+          <Button fullWidth ><p>SOLICITA UN LAVADO AHORA</p></Button>
+         </div>
 
       </FormControl>
     </Container>

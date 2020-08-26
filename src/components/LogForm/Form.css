@@ -1,6 +1,7 @@
 .MuiFormControl-root {
-    width: 100%;
+    width: 100%;    
 }
+
 .login {
     margin: 1rem 0 0 0;
     height: 8rem;
@@ -26,9 +27,15 @@ h3, h4 {
     color: #2F80ED;
 }
 
+h4 span {
+    color: #2F80ED;
+    /* text-decoration: none; */
+}
+
 .access {
     margin: 40px auto 0px;
 }
+
 .button1 {
     border-radius: 25px;
     margin-top: 20px;
@@ -50,4 +57,20 @@ h3, h4 {
 .button2 p {
     color: #101D49;   
     margin: 2px;
+}
+
+.button2 p i {
+    color: #101D49;   
+    margin-right: 15px;
+}
+
+.button1CC {
+    border-radius: 25px;
+    margin-top: 80px;
+    background: #101D49;  
+}
+  
+.button1CC p {
+    color: #fff;   
+    margin: 5px;
 }

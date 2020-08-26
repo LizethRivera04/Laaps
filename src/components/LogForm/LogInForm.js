@@ -20,7 +20,7 @@ const LogForm = () => {
     return (
         <Container>
             <h3>Inicia sesión</h3>
-            <h4>¿Todavía sin cuenta? <Link to="/register">Regístrate</Link></h4>
+            <h4>¿Todavía sin cuenta?<Link to="/register"><span> Regístrate</span></Link></h4>
             <FormControl direction="column">
                 <TextField type="email" label="Correo" onChange={e=>setUserData({...userData, email: e.target.value})}/>
                 <TextField id="password" label="Contraseña" type="password" onChange={e=>setUserData({...userData, email: e.target.value})}/>
@@ -40,14 +40,14 @@ const LogForm = () => {
                 </Typography>
 
                 <div className="button2">
-                    <Button fullWidth onClick={()=> auth.facebook()}>
-                        <p>FACEBOOK</p> 
+                    <Button fullWidth onClick={()=> auth.facebook()} >
+                        <p><i class="fab fa-facebook"></i>FACEBOOK</p> 
                     </Button>
                 </div>
 
                 <div className="button2">
                     <Button fullWidth onClick={()=> auth.google()} >
-                        <p>GOOGLE</p> 
+                        <p><i class="fab fa-google"></i>GOOGLE</p> 
                     </Button>
                 </div>
                 
