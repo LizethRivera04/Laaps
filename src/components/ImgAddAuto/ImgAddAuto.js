@@ -11,13 +11,13 @@ const ImgAddAuto = () => {
             <div className="content-auto">
                 <div className="container-img-auto">
                     <img src={Photo} className="img-auto"></img>
-                    <img src={Photo} className="img-auto"></img>
-                    <img src={Photo} className="img-auto"></img>
                 </div>
             </div>
-            <Button variant="outlined" color="primary" fullWidth>
-                Primary
-      </Button>
+            <div className="button1">
+                <Button fullWidth>
+                    <p>Primary</p>
+                </Button>
+            </div>
         </div>
     )
 }

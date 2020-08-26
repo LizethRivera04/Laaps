@@ -12,7 +12,17 @@
    /*  grid-template-rows: 90px; */
 }
 
-
 .img-auto{
     width: 110px;
 }
+
+.button1 {
+    border-radius: 25px;
+    margin-top: 20px;
+    background: #101D49;
+    color: #fff;    
+  }
+.button1 p {
+    color: #fff;   
+    margin: 5px;
+  }

@@ -11,9 +11,14 @@
 
 }
 
+.location {
+  display: flex;
+  background-color: #C9CEDF;
+
+}
+
 .paypal {
   display: flex;
   align-items: center;
   background-color: #C9CEDF;
-
 }

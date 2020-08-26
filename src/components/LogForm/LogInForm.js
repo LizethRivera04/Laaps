@@ -18,14 +18,33 @@ const LogForm = () => {
                 <TextField id="email" label="Correo" onChange={e=>setUserData({...userData, email: e.target.value})}/>
                 <TextField id="password" label="Contraseña" type="password" onChange={e=>setUserData({...userData, email: e.target.value})}/>
                 <Typography variant="subtitle2" display="block" color="primary" gutterBottom>
-                    He olvidado mi contraseña
+                    <p className="forgetPass">He olvidado mi contraseña</p>
                 </Typography>
-                <Button variant="contained" color="primary">Ingresar</Button>
+                <div className="button1">
+                    <Button fullWidth >
+                        <p>Ingresar</p>
+                    </Button>
+                </div>
+
             </FormControl>
             <div className="login">
-                <Typography variant="subtitle1">Accede con</Typography>
-                <Button variant="contained" color="primary" onClick={()=> auth.facebook()}>FACEBOOK</Button>
-                <Button variant="contained" color="primary" onClick={()=> auth.google()}>GOOGLE</Button>
+                <Typography variant="subtitle1">
+                    <p className="access">Accede con</p>
+                </Typography>
+
+                <div className="button2">
+                    <Button fullWidth onClick={()=> auth.facebook()}>
+                        <p>FACEBOOK</p> 
+                    </Button>
+                </div>
+
+                <div className="button2">
+                    <Button fullWidth onClick={()=> auth.google()} >
+                        <p>GOOGLE</p> 
+                    </Button>
+                </div>
+                
+
             </div>
       </Container>
      );

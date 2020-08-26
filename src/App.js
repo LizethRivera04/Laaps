@@ -6,6 +6,8 @@ import RegisterForm from './components/LogForm/RegisterForm';
 import LogInForm from './components/LogForm/LogInForm';
 import RegCar from './components/RegisterCar/RegisterCar';
 import ServiceRequest from './components/ServiceRequest/ServiceRequest'
+import ServiceRequestClient from './components/ServiceRequest/ServiceRequestClient_1';
+import AddCar from './components/AddCar/AddCar';
 
 function App() {
   return (
@@ -23,9 +25,16 @@ function App() {
             <Route path="/regcar">
               <RegCar />
             </Route>
+            <Route path="/addcar">
+              <AddCar />
+            </Route>
             <Route path="/servicerequest">
               <ServiceRequest />
             </Route>
+            <Route path="/servicerequestclient_1">
+              <ServiceRequestClient />
+            </Route>
+
           </Switch>
         </div>
       </Router>
