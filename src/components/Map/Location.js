@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-
+import MyLocationIcon from '@material-ui/icons/MyLocation';
 
 
 const Location = ({ mapRef, setMarker, setMark }) => {
@@ -28,14 +27,18 @@ const Location = ({ mapRef, setMarker, setMark }) => {
     }
 
     return (
-        <button
-            onClick={() => {
-                geolocation()
+        <div className="content-geolocation">
+            <MyLocationIcon
+                className="icon-geolocation"
+                color="primary"
+                onClick={() => {
+                    geolocation()
+                }}
+            />
+            <p className="p-geolocation">Activar ubicación</p>
+        </div>
 
-            }}
-        >
-            Location
-        </button>
+
 
     )
 }

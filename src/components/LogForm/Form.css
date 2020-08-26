@@ -2,9 +2,12 @@
     width: 100%;
 }
 .login {
+    margin: 1rem 0 0 0;
+    height: 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 h3 {
@@ -14,8 +17,8 @@ h3 {
 h3, h4 {
     text-align: center;
 }
-.MuiButton-containedPrimary {
-    margin: 5rem;
+.button {
+    width: 100%;
 }
 
 .forgetPass {

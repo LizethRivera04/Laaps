@@ -8,6 +8,8 @@ import RegCar from './components/RegisterCar/RegisterCar';
 import ServiceRequest from './components/ServiceRequest/ServiceRequest'
 import ServiceRequestClient from './components/ServiceRequest/ServiceRequestClient_1';
 import AddCar from './components/AddCar/AddCar';
+import ServiceHistory from './components/ServiceHistory/ServiceHistory';
+import Solicited from './components/Solicited/Solicited';
 
 function App() {
   return (
@@ -35,6 +37,12 @@ function App() {
               <ServiceRequestClient />
             </Route>
 
+            <Route path="/servicehistory">
+              <ServiceHistory />
+            </Route>
+            <Route path="/solicited">
+              <Solicited />
+            </Route>
           </Switch>
         </div>
       </Router>

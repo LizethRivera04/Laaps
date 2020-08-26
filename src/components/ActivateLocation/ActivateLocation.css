@@ -1,0 +1,25 @@
+.content-activate-location{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #C9CEDF;
+    height: 60px;
+    display: flex;
+    align-items: center;
+   
+}
+.container-activate{
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+p{
+    font-size: 14px;
+    margin:0;
+}
+i{
+    margin-left: 10px;
+   font-size: 20px;
+   color:#2790C3
+}
+
