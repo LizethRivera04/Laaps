@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RegisterForm from './components/LogForm/RegisterForm';
 import LogInForm from './components/LogForm/LogInForm';
 import RegCar from './components/RegisterCar/RegisterCar';
-import ServiceRequest from './components/ServiceRequest/ServiceRequest';
+import ServiceRequest from './components/ServiceRequest/ServiceRequest'
+import ServiceHistory from './components/ServiceHistory/ServiceHistory';
 import Solicited from './components/Solicited/Solicited';
 
 function App() {
@@ -27,14 +28,9 @@ function App() {
             <Route path="/servicerequest">
               <ServiceRequest />
             </Route>
-
-
-
-
-
-
-
-
+            <Route path="/servicehistory">
+              <ServiceHistory />
+            </Route>
             <Route path="/solicited">
               <Solicited />
             </Route>

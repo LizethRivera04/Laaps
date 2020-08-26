@@ -112,4 +112,4 @@ const saveServiceBD = (service) => {
 }
 
 
-export default { createUser, google, facebook, loginUser, logOutUser, fileUserStorage, userObserver, saveServiceBD, db, };
+export default { fb, createUser, google, facebook, loginUser, logOutUser, fileUserStorage, userObserver, saveServiceBD, db, };
