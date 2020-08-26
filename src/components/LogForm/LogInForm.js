@@ -9,26 +9,26 @@ const LogForm = () => {
         email: '',
         password: ''
     })
-    
-    return ( 
-        <Container className="login">
+
+    return (
+        <Container>
             <h3>Inicia sesión</h3>
             <h4>¿Todavía sin cuenta? <Link to="/register">Regístrate</Link></h4>
             <FormControl direction="column">
-                <TextField id="email" label="Correo" onChange={e=>setUserData({...userData, email: e.target.value})}/>
-                <TextField id="password" label="Contraseña" type="password" onChange={e=>setUserData({...userData, email: e.target.value})}/>
-                <Typography variant="subtitle2" display="block" color="primary" gutterBottom>
+                <TextField type="email" label="Correo" onChange={e => setUserData({ ...userData, email: e.target.value })} />
+                <TextField id="password" label="Contraseña" type="password" onChange={e => setUserData({ ...userData, email: e.target.value })} />
+                <Typography variant="caption" align="right" display="block" color="primary" gutterBottom>
                     He olvidado mi contraseña
                 </Typography>
-                <Button variant="contained" color="primary">Ingresar</Button>
+                <Button variant="contained" color="primary" className="button" onClick={() => auth.loginUser(userData.email, userData.password)}>Ingresar</Button>
             </FormControl>
             <div className="login">
                 <Typography variant="subtitle1">Accede con</Typography>
-                <Button variant="contained" color="primary" onClick={()=> auth.facebook()}>FACEBOOK</Button>
-                <Button variant="contained" color="primary" onClick={()=> auth.google()}>GOOGLE</Button>
+                <Button variant="outlined" color="primary" className="button" onClick={() => auth.facebook()}>FACEBOOK</Button>
+                <Button variant="outlined" color="primary" className="button" onClick={() => auth.google()}>GOOGLE</Button>
             </div>
-      </Container>
-     );
+        </Container>
+    );
 }
- 
+
 export default LogForm;

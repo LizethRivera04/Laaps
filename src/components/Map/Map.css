@@ -2,3 +2,13 @@
     margin-top: 10px;
     margin-bottom: 15px;
 }
+.content-geolocation{
+    display: flex;
+    align-items: center;
+}
+.icon-geolocation{
+    margin-bottom: 5px;
+}
+.p-geolocation{
+     margin-left: 10px;   
+}
