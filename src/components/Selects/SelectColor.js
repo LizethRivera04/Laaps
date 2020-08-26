@@ -17,13 +17,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SelectColor = () => {
+const SelectColor = ({userAutoData, setUserAutoData}) => {
   const classes = useStyles();
   const [color, setColor] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
-  const handleChange = (event) => {
-    setColor(event.target.value);
+  const handleChange = (e) => {
+    setUserAutoData({...userAutoData, [e.target.name]: e.target.value});
+    setColor(e.target.value)
   };
 
   const handleClose = () => {
@@ -47,16 +48,17 @@ const SelectColor = () => {
           onClose={handleClose}
           onOpen={handleOpen}
           value={color}
+          name="color"
           onChange={handleChange}
         >
-          <MenuItem value={1}>Blanco</MenuItem>
-          <MenuItem value={2}>Negro</MenuItem>
-          <MenuItem value={3}>Rojo</MenuItem>
-          <MenuItem value={4}>Gris</MenuItem>
-          <MenuItem value={5}>Plata</MenuItem>
-          <MenuItem value={6}>Azul</MenuItem>
-          <MenuItem value={7}>Vino</MenuItem>
-          <MenuItem value={7}>Cafe</MenuItem>
+          <MenuItem value="Blanco">Blanco</MenuItem>
+          <MenuItem value="Negro">Negro</MenuItem>
+          <MenuItem value="Rojo">Rojo</MenuItem>
+          <MenuItem value="Gris">Gris</MenuItem>
+          <MenuItem value="Plata">Plata</MenuItem>
+          <MenuItem value="Azul">Azul</MenuItem>
+          <MenuItem value="Vino">Vino</MenuItem>
+          <MenuItem value="Cafe">Cafe</MenuItem>
         </Select>
       </FormControl>
     </div>

@@ -21,11 +21,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ImageCar = () => {
+const ImageCar = ({userAutoData}) => {
   const [image, setImage] = useState(null);
   const classes = useStyles();
   const [user, setUser] = useState({})
   const db = firebase.firestore();
+
+  const [imgAut, setimgAut] = useState([])
 
   const handleFile = (e) => {
 
@@ -33,7 +35,7 @@ const ImageCar = () => {
       let file = e.target.files[0]
       console.log(typeof file)
       setImage(file)
-      fileAutoStorage.fileAutoStorage(file)
+      fileAutoStorage.fileAutoStorage({file: file, userAutoData})
 
     }
     return
@@ -47,7 +49,10 @@ const ImageCar = () => {
         docRef.onSnapshot((snapshot) => {
           let myData = snapshot.data();
           setUser(myData)
+          setimgAut(myData.autos)
           return myData
+
+
         })
       } else {
         // No user is signed in.
@@ -58,7 +63,10 @@ const ImageCar = () => {
 
   return (
     <div className={classes.root}>
-      <img src={user.autos}></img>
+
+      {imgAut.map(auto => (
+        <img src={user.autos[0].image} className={styles.imgcar}></img>
+      ))}
       <input
         accept="image/*"
         className={classes.input}
@@ -66,11 +74,6 @@ const ImageCar = () => {
         multiple
         type="file"
       />
-      <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span">
-          Upload
-        </Button>
-      </label>
       <input accept="image/*" className={classes.input} id="icon-button-file" type="file" onChange={handleFile} />
       <label htmlFor="icon-button-file">
         <IconButton color="primary" aria-label="upload picture" component="span">

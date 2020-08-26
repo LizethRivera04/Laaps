@@ -1,0 +1,10 @@
+.button1 {
+  border-radius: 25px;
+  margin-top: 20px;
+  background: #101D49;  
+}
+
+.button1 p {
+  color: #fff;   
+  margin: 5px;
+}
