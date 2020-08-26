@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import indigo from '@material-ui/core/colors/indigo';
 import fileUserStorage from '../../firebase';
+import 'firebase/firestore'
+import 'firebase/auth';
+import firebase from 'firebase/app';
 import './UserProfile.css'
 const useStyles = makeStyles((theme) => ({
     large: {
@@ -27,11 +30,14 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 const Photo = () => {
+    //const firebase = useFirebaseApp()
+    const db = firebase.firestore();
     const [image, setImage] = useState(null);
+    const [user, setUser] = useState({})
     const classes = useStyles();
 
-    const handleFile = (e) => {
 
+    const handleFile = (e) => {
         if (e.target.files) {
             let file = e.target.files[0]
             console.log(typeof file)
@@ -41,15 +47,30 @@ const Photo = () => {
         }
         return
     }
+    //console.log(user);
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                const docRef = db.collection('users/').doc(user.uid);
+                docRef.onSnapshot((snapshot) => {
+                    let myData = snapshot.data();
+                    setUser(myData)
+                    return myData
+                })
+            } else {
+                // No user is signed in.
+                console.log('No user');
+            }
+        });
+    }, [])
+
 
     return (
         <Fragment>
             <div className="icon-center container-avatar">
-                <Avatar alt="Remy Sharp" src='../logo512.png' className={classes.large} />
+                <Avatar alt="Remy Sharp" src={user.photo} className={classes.large} />
             </div>
             <div className=" icon-center">
-                {/* <label for="file" id="labelFile" className="absolute "><i className="far fa-image" title="Upload"></i></label>
-                <input type="file" accept="image/*" id="file" onChange={handleFile} /> */}
 
                 <label htmlFor="icon-button-file" className="absolute">
                     <IconButton color="primary" aria-label="upload picture" component="span" className="absolute" >
@@ -60,7 +81,7 @@ const Photo = () => {
                 {/*  <Icon className="absolute" >add_circle</Icon> */}
             </div>
             <Typography variant="h6" gutterBottom color="primary" className={classes.center}>
-                Carlos Estradaa
+                {user.name}
             </Typography>
 
 

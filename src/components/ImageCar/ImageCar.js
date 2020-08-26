@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import fileUserStorage from '../../firebase';
+import fileAutoStorage from '../../firebase';
+import 'firebase/firestore'
+import 'firebase/auth';
+import firebase from 'firebase/app';
 import styles from './styles.module.css';
 
-
 const useStyles = makeStyles((theme) => ({
+
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -21,6 +24,8 @@ const useStyles = makeStyles((theme) => ({
 const ImageCar = () => {
   const [image, setImage] = useState(null);
   const classes = useStyles();
+  const [user, setUser] = useState({})
+  const db = firebase.firestore();
 
   const handleFile = (e) => {
 
@@ -28,14 +33,32 @@ const ImageCar = () => {
       let file = e.target.files[0]
       console.log(typeof file)
       setImage(file)
-      fileUserStorage.fileUserStorage(file)
+      fileAutoStorage.fileAutoStorage(file)
 
     }
     return
   }
 
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        const docRef = db.collection('users/').doc(user.uid);
+        docRef.onSnapshot((snapshot) => {
+          let myData = snapshot.data();
+          setUser(myData)
+          return myData
+        })
+      } else {
+        // No user is signed in.
+        console.log('No user');
+      }
+    });
+  }, [])
+
   return (
     <div className={classes.root}>
+      <img src={user.autos}></img>
       <input
         accept="image/*"
         className={classes.input}

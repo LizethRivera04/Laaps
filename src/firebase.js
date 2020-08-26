@@ -72,6 +72,8 @@ const facebook = () => {
 
 
 const fileUserStorage = (image) => {
+    let user = firebase.auth().currentUser;
+    console.log(user.uid);
     console.log(image);
     storage.ref('photoUsers').child(image.name).put(image)
         .then(snapshot => {
@@ -81,7 +83,43 @@ const fileUserStorage = (image) => {
         .then(url => {
             let link = url
             console.log(link);
+            updatePhoto(link, user.uid)
         })
+}
+
+const fileAutoStorage = (image) => {
+    let user = firebase.auth().currentUser;
+    console.log(user.uid);
+    console.log(image);
+    storage.ref('photoUsers').child(image.name).put(image)
+        .then(snapshot => {
+            // console.log(snapshot);
+            return snapshot.ref.getDownloadURL()
+        })
+        .then(url => {
+            let link = url
+            console.log(link);
+            updateFileAuto(link, user.uid)
+        })
+}
+
+const updatePhoto = (link, uid) => {
+    const docRef = db.collection('users/').doc(uid);
+    docRef.update({
+        photo: link
+    })
+        .then(res => console.log('Se ha actualizado la foto del usuario con id', uid))
+        .catch(err => console.err('Error al actualizar la foto del usuario', err))
+}
+
+
+const updateFileAuto = (link, uid) => {
+    const docRef = db.collection('users/').doc(uid);
+    docRef.update({
+        autos: firebase.firestore.FieldValue.arrayUnion(link)
+    })
+        .then(res => console.log('Se ha agregado un auto al usuario con id', uid))
+        .catch(err => console.err('Error al agregar un auto al usuario', err))
 }
 
 const userObserver = () => {
@@ -112,4 +150,5 @@ const saveServiceBD = (service) => {
 }
 
 
-export default { fb, createUser, google, facebook, loginUser, logOutUser, fileUserStorage, userObserver, saveServiceBD, db, };
+export default { fb, createUser, google, facebook, loginUser, logOutUser, fileUserStorage, userObserver, saveServiceBD, fileAutoStorage };
+
