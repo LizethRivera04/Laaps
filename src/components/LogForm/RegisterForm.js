@@ -15,7 +15,7 @@ const RegisterForm = () => {
 
     const createAccount = () => {
         if(registerUserData.password === registerUserData.passwordconfirm) {
-            auth.createUser(registerUserData.email, registerUserData.password)
+            auth.createUser(registerUserData.email, registerUserData.password, registerUserData.name, registerUserData.lastname)
         } else {
             alert("Confirma que las dos contraseñas ingresadas coincidan")
         }
