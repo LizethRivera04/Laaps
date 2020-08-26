@@ -2,13 +2,52 @@
     width: 100%;
 }
 .login {
+    margin: 1rem 0 0 0;
+    height: 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
+
+h3 {
+    margin-top: 60px;
+}
+
 h3, h4 {
     text-align: center;
 }
-.MuiButton-containedPrimary {
-    margin: 5rem;
+.button {
+    width: 100%;
+}
+
+.forgetPass {
+    text-align: right;
+    color: #2F80ED;
+}
+
+.access {
+    margin: 40px auto 0px;
+}
+.button1 {
+    border-radius: 25px;
+    margin-top: 20px;
+    background: #101D49;  
+}
+  
+.button1 p {
+    color: #fff;   
+    margin: 5px;
+}
+
+.button2 {
+    border: 2px solid #101D49;
+    border-radius: 25px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.button2 p {
+    color: #101D49;   
+    margin: 2px;
 }
