@@ -14,17 +14,13 @@ const ImgAddAuto = () => {
             <div className="content-auto">
                 <div className="container-img-auto">
                     <img src={Photo} className="img-auto"></img>
-                    <img src={Photo} className="img-auto"></img>
-                    <img src={Photo} className="img-auto"></img>
                 </div>
             </div>
-
-            <div className="container-btn">
-                <Button variant="outlined" color="primary" fullWidth >
-                    ¿HOY USAS OTRO COCHE?
-            </Button>
+            <div className="button1">
+                <Button fullWidth>
+                    <p>¿HOY USAS OTRO COCHE?</p>
+                </Button>
             </div>
-
         </div>
     )
 }
