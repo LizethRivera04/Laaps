@@ -64,9 +64,9 @@ const ImageCar = ({userAutoData}) => {
   return (
     <div className={classes.root}>
 
-      {imgAut.map(auto => (
+      {/* {imgAut.map(auto => (
         <img src={user.autos[0].image} className={styles.imgcar}></img>
-      ))}
+      ))} */}
       <input
         accept="image/*"
         className={classes.input}
