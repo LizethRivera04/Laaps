@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import './Form.css';
 import { TextField, Container, Button, FormControl, Typography } from '@material-ui/core';
 import auth from '../../firebase';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const LogForm = () => {
+    let history = useHistory()
+    auth.fb.auth().onAuthStateChanged(user => {
+        if(user) {
+            history.push('/regcar')
+        }
+    })
+
     const [userData, setUserData] = useState({
         email: '',
         password: ''

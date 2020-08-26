@@ -65,4 +65,4 @@ const facebook = () => {
     .catch(error => console.log(error))
 }
 
-export default {createUser, google, facebook, loginUser, logOutUser};
+export default {fb, createUser, google, facebook, loginUser, logOutUser};

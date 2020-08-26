@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Container, FormControl, TextField, Button } from '@material-ui/core';
 import auth from '../../firebase';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const RegisterForm = () => {
+    let history = useHistory()
+    auth.fb.auth().onAuthStateChanged(user => {
+        if(user) {
+            history.push('/regcar')
+        }
+    })
     const [registerUserData, setRegisterUserData] = useState({
         name: '',
         lastname: '',
